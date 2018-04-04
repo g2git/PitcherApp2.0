@@ -10,6 +10,9 @@ Route::post('/cart', 'CartController@store')->name('cart.store');
 Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
 Route::post('/cart/wishlist/{product}', 'CartController@wishlist')->name('cart.wishlist');
 
+Route::delete('/wishlist/{product}', 'WishlistController@destroy')->name('wishlist.destroy');
+Route::post('/wishlist/wishlist/{product}', 'WishlistController@addtocart')->name('wishlist.addtocart');
+
 Route::get('/empty', function(){
   Cart::destroy();
 });

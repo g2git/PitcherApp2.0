@@ -101,6 +101,13 @@ class CartController extends Controller
 
         Cart::remove($id);
 
+        $duplicates = Cart::instance('saveForLater')->search(function ($cartItem, $rowId) use ($id) {
+              return $rowId === $id;
+          });
+          if ($duplicates->isNotEmpty()) {
+              return redirect()->route('cart.index')->with('success', 'Item is already saved to your wishlist');
+          }
+
         Cart::instance('saveForLater')->add($item->id, $item->name, 1, $item->price)->associate('App\Product');
 
         return redirect()->route('cart.index')->with('success', 'Item had been saved in your wishlist');
