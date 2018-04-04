@@ -1,0 +1,19 @@
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.pagination {
+  margin-bottom: 30px;
+}
+
+#product_list{
+  display: none;
+}
+
+/*body{
+  background: url(https://images.pexels.com/photos/46792/the-ball-stadion-football-the-pitch-46792.jpeg?h=350&auto=compress&cs=tinysrgb) no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}*/
