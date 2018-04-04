@@ -16,7 +16,10 @@ Route::post('/wishlist/wishlist/{product}', 'WishlistController@addtocart')->nam
 Route::get('/empty', function(){
   Cart::destroy();
 });
-Route::view('/checkout', 'checkout' );
+Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
+
+
 Route::view('/thankyou', 'thankyou' );
 
 Auth::routes();

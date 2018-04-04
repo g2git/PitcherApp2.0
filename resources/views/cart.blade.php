@@ -54,6 +54,10 @@
     @endif
   </div>
   <div class="row">
+    <a href="{{ route('shop.index') }}" class="btn btn-info">Continue shopping</a>
+    <a href="{{ route('checkout.index') }}" class="btn btn-success">Proceed to checkout</a>
+  </div>
+  <div class="row">
     <h4>mightAlsoLike</h4>
     @foreach ($mightAlsoLike as $product)
       <h3><a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</a></h3>

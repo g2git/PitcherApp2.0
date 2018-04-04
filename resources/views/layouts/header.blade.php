@@ -14,7 +14,7 @@
   <link href="{{ asset('css/default.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
-
+<script src="https://js.stripe.com/v3/"></script>
   @yield('styles')
 </head>
 <body>
