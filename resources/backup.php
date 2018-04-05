@@ -73,3 +73,58 @@
             <span class="sr-only">Next</span>
           </a>
          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         @forelse($products as $product)
+           <a href="{{ route('shop.show', $product->slug) }}">{{$product->name}}</a>
+         {{ $product->presentPrice() }}
+         @empty
+          <div class="text-left">No items found</div>
+         @endforelse
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="col-lg-3 col-md-4 col-sm-6">
+  <img src="http://placehold.it/700x400" alt="img" class="img-thumbnail">
+  <div class="card-body">
+    <div class="row"> <p>{{ $product->title }}</p> </div>
+    <div class="row"> <p>{{ $product->price }}</p> </div>
+  </div>
