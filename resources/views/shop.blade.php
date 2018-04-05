@@ -33,7 +33,11 @@
         <div class="col-lg-3 col-md-4 col-sm-6">
 
             <a href="{{ route('shop.show', $product->slug) }}">
-              <img src="{{ asset('img/defaults/placeholder_default_350x180.png')}}" alt="img" class="img-thumbnail">
+              @if($product->image)
+                <img src="{{ asset('storage/'.$product->image) }}" alt="img" class="img-thumbnail">
+              @else
+                <img src="{{ asset('img/defaults/placeholder_default_350x180.png')}}" alt="img" class="img-thumbnail">
+              @endif
             </a>
           <div class="card-body">
             <div class="row">
@@ -70,7 +74,11 @@
               <div class="row">
                 <div class="col-md-4">
                     <a href="{{ route('shop.show', $product->slug) }}">
-                      <img src=src="{{ asset('img/defaults/placeholder_default_350x180.png')}}" alt="img" class="img-thumbnail">
+                      @if($product->image)
+                        <img src="{{ asset('storage/'.$product->image) }}" alt="img" class="img-thumbnail">
+                      @else
+                        <img src="{{ asset('img/defaults/placeholder_default_350x180.png')}}" alt="img" class="img-thumbnail">
+                      @endif
                     </a>
                 </div>
                 <div class="col-md-5">
@@ -84,7 +92,7 @@
                       <i class="far fa-star"></i>
                     </p>
                   </div>
-                  <div class="row"> {{ $product->description }}</div>
+                  <div class="row"> {!! $product->description !!}</div>
                 </div>
                 <div class="col-md-3">
                   <div class="row"><button type="button" class="btn btn-success">Add to cart</button></div>
