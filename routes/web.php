@@ -20,7 +20,7 @@ Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 
 
-Route::view('/thankyou', 'thankyou' );
+Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.index');
 
 Auth::routes();
 
