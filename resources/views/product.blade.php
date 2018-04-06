@@ -17,14 +17,6 @@
         <div class="product-title">{{ $product->name }}</div>
         <div class="product-desc">{{ $product->slug }}</div>
 
-      <div class="product-rating">
-        <i class="fa fa-star gold"></i>
-        <i class="fa fa-star gold"></i>
-        <i class="fa fa-star gold"></i>
-        <i class="fa fa-star gold"></i>
-        <i class="fa fa-star-o"></i>
-      </div>
-
       <hr>
 
       <div class="product-price">{{ $product->presentPrice() }}</div>
@@ -70,13 +62,6 @@
           <button type="submit" class="btn btn-success">Add to cart</button>
         </form>
       </div>
-
-      <div class="btn-group wishlist">
-      <button type="button" class="btn btn-danger">
-        Add to wishlist
-      </button>
-      </div>
-
     </div>
   </div>  <!-- end of div first "row" for product info and img -->
   <div>
