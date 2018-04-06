@@ -9,7 +9,10 @@ use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Product extends Model
 {
+<<<<<<< HEAD
      use SearchableTrait, Searchable;
+=======
+>>>>>>> c686f4798b78e89b393ff3dcc71e993bc7e37d74
 
     protected $searchable = [
     /**
