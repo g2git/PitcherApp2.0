@@ -10,7 +10,7 @@ class WishlistController extends Controller
     {
       Cart::instance('saveForLater')->remove($id);
 
-      return back()->with('success','Item has been removed!');
+      return back()->with('success','Item has been removed from wishlist!');
     }
 
     public function addtocart($id)

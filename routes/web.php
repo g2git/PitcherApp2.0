@@ -6,9 +6,12 @@ Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
 Route::view('/product', 'product');
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
+
 Route::post('/cart', 'CartController@store')->name('cart.store');
+Route::patch('/cart/{product}', 'CartController@update')->name('cart.update');
 Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
 Route::post('/cart/wishlist/{product}', 'CartController@wishlist')->name('cart.wishlist');
+
 
 Route::delete('/wishlist/{product}', 'WishlistController@destroy')->name('wishlist.destroy');
 Route::post('/wishlist/wishlist/{product}', 'WishlistController@addtocart')->name('wishlist.addtocart');
