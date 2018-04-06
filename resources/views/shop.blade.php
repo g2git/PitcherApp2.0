@@ -44,6 +44,13 @@
           </div>
         </div>
         <div class="col-md">
+          <div class="col-2">
+          <ul><p><h5 class="text-left">Categories</h5></p>
+         @foreach($categories as $category)
+           <li class="{{ request()->category == $category->slug ? 'active' : '' }}"><a href="{{ route('shop.index', ['category' => $category->slug]) }}">{{ $category->name }}</a></li>
+         @endforeach
+       </ul>
+      </div>
           <div class="btn-group" role="group" aria-label="Basic example">
             <button id="list" type="button" class="btn btn-secondary"><i class="fas fa-align-justify"></i></button>
             <button id="block" type="button" class="btn btn-secondary"><i class="fas fa-th"></i></button>
@@ -51,12 +58,14 @@
         </div>
       </div>
 
-      <div class="row" id="product_block"><!--Product block -->
+      <div class="products-header col-7" ><!--Product block -->
+        <h2 class="stylish-heading">{{ $categoryName }}</h2>
+
         @foreach($products as $product)
          <!-- @forelse($products as $product) -->
 
 
-        <div class="col-lg-3 col-md-4 col-sm-6">
+   <div class="row" id="product_block"><!--Product block -->
 
             <a href="{{ route('shop.show', $product->slug) }}">
               @if($product->image)

@@ -16,6 +16,10 @@ class ShopController extends Controller
     {
       $pagination = 9;
       $categories = Category::all();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 13e2931375ecac1bee588203ec36b346b95d720b
       if(request()->category){
          $products = Product::with('categories')->whereHas('categories', function ($query) {
          $query->where('slug', request()->category);
@@ -27,6 +31,10 @@ class ShopController extends Controller
          // $categories = Category::all();
          $categoryName = 'Featured';
       }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 13e2931375ecac1bee588203ec36b346b95d720b
        //If statement to sort the category page by price
       if(request()->sort == 'low_high'){
         $products = $products->orderBy('price')->paginate($pagination);
@@ -35,6 +43,10 @@ class ShopController extends Controller
       }else{
         $products = $products->paginate($pagination);
       }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 13e2931375ecac1bee588203ec36b346b95d720b
       return view('shop')->with([
         'products' => $products,
         'categories' => $categories,
