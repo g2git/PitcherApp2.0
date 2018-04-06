@@ -5,6 +5,31 @@
 @endsection
 
 @section('content')
+
+@component('components.breadcrumbs')
+    <a href="/">Home</a>
+    <i class="fa fa-chevron-right"></i>
+    <span>Search</span>
+@endcomponent
+
+<div class="container">
+    @if (session()->has('success_message'))
+        <div class="alert alert-success">
+            {{ session()->get('success_message') }}
+        </div>
+    @endif
+
+    @if(count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+</div>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2"><!-- product filter -->
@@ -28,6 +53,7 @@
 
       <div class="row" id="product_block"><!--Product block -->
         @foreach($products as $product)
+         <!-- @forelse($products as $product) -->
 
 
         <div class="col-lg-3 col-md-4 col-sm-6">
@@ -40,10 +66,6 @@
               @endif
             </a>
           <div class="card-body">
-            <div class="row">
-
-
-            </div>
             <div class="row"><a href="{{ route('shop.show', $product->slug) }}"><p>{{ $product->name }}</p></a></div>
             <div class="row">
               <p>
@@ -61,12 +83,24 @@
                 <button type="button" class="btn btn-info">Wishlist</button>
               </div>
             </div>
+            @endforeach
+            <!-- @empty
+        <div class="text-left">No items found</div>
+       @endforelse<br><br><br>
+           {{ $products->appends(request()->input())->links() }} -->
+     </div>
+       <div class="text-right col-3">
+         <!-- <strong>Price</strong> -->
+         <a href="{{ route('shop.index', ['category'=> request()->category, 'sort'=>'high_low']) }}">High to Low</a>|
+         <a href="{{ route('shop.index', ['category'=> request()->category, 'sort'=>'low_high']) }}">Low to High</a>
+</div>
           </div>
         </div>
-        @endforeach
-      </div><!--End Product block -->
+      </div>
+      <!--End Product block -->
 
       <div class="row" id="product_list"><!--Prodcut list -->
+        <!-- @forelse($products as $product) -->
         @foreach($products as $product)
         <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
           <div class="panel panel-default">
@@ -103,21 +137,25 @@
           </div>
         </div>
         @endforeach
-      </div><!--End prodcut list -->
+        <!-- @empty
+    <div class="text-left">No items found</div>
+   @endforelse<br><br><br>
+       {{ $products->appends(request()->input())->links() }} -->
+      </div>
+      <!--End product list -->
 
     </div>
-    <div class="col-md-2">
 
-    </div>
-  </div>
-</div>
 <div class="container">
   <!-- Pagination -->
   <div class="row justify-content-center">
   {!!$products->links()!!}
 </div>
+</div>
 <!-- /.container -->
-@endsection
+
 @section('scripts')
 <script type="text/javascript" src="{{ asset('js/shop.js') }}"></script>
+@endsection
+</div>
 @endsection

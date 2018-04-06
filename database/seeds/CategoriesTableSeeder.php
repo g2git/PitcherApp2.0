@@ -1,22 +1,32 @@
 <?php
 
 use Illuminate\Database\Seeder;
+<<<<<<< 2d558dd78efae0e45033e0f04373ce6ae0982182
 use TCG\Voyager\Models\Category;
 use TCG\Voyager\Models\DataRow;
 use TCG\Voyager\Models\DataType;
 use TCG\Voyager\Models\Menu;
 use TCG\Voyager\Models\MenuItem;
 use TCG\Voyager\Models\Permission;
+=======
+use App\Category;
+use Carbon\Carbon;
+>>>>>>> searchproduct
 
 class CategoriesTableSeeder extends Seeder
 {
     /**
+<<<<<<< 2d558dd78efae0e45033e0f04373ce6ae0982182
      * Auto generated seed file.
+=======
+     * Run the database seeds.
+>>>>>>> searchproduct
      *
      * @return void
      */
     public function run()
     {
+<<<<<<< 2d558dd78efae0e45033e0f04373ce6ae0982182
         //Data Type
         $dataType = $this->dataType('name', 'categories');
         if (!$dataType->exists) {
@@ -229,5 +239,18 @@ class CategoriesTableSeeder extends Seeder
     protected function dataType($field, $for)
     {
         return DataType::firstOrNew([$field => $for]);
+=======
+        //
+        $now = Carbon::now()->toDateTimeString();
+       Category::insert([
+  ['name' => 'Laptops', 'slug' => 'laptops', 'created_at' => $now, 'updated_at' => $now],
+  ['name' => 'Desktops', 'slug' => 'desktops', 'created_at' => $now, 'updated_at' => $now],
+  ['name' => 'Mobile Phones', 'slug' => 'mobile-phones', 'created_at' => $now, 'updated_at' => $now],
+  ['name' => 'Tablets', 'slug' => 'tablets', 'created_at' => $now, 'updated_at' => $now],
+  ['name' => 'TVs', 'slug' => 'tvs', 'created_at' => $now, 'updated_at' => $now],
+  ['name' => 'Digital Cameras', 'slug' => 'digital-cameras', 'created_at' => $now, 'updated_at' => $now],
+  ['name' => 'Appliances', 'slug' => 'appliances', 'created_at' => $now, 'updated_at' => $now],
+]);
+>>>>>>> searchproduct
     }
 }
