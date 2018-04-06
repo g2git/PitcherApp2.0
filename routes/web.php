@@ -25,3 +25,5 @@ Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.inde
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/search', 'ShopController@search')->name('search');

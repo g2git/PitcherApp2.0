@@ -8,9 +8,9 @@
     </div>
     <div id="categories-menu" class="collapse show">
       <ul class="list-group">
-        <li class="list-group-item button" data-filter="shoes">Shoes</li>
-        <li class="list-group-item button" data-filter="shirts">Shirts</li>
-        <li class="list-group-item button" data-filter="shorts">shorts</li>
+        @foreach($categories as $category)
+          <li class="{{ request()->category == $category->slug ? 'active' : '' }}"><a href="{{ route('shop.index', ['category' => $category->slug]) }}">{{ $category->name }}</a></li>
+     @endforeach
       </ul>
 
     </div>
