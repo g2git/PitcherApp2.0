@@ -36,3 +36,5 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/search', 'ShopController@search')->name('search');
+
+Route::get('/search-algolia', 'ShopController@searchAlgolia')->name('search-algolia');

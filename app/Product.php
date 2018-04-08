@@ -9,10 +9,7 @@ use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Product extends Model
 {
-<<<<<<< HEAD
      use SearchableTrait, Searchable;
-=======
->>>>>>> c686f4798b78e89b393ff3dcc71e993bc7e37d74
 
     protected $searchable = [
     /**
@@ -37,7 +34,17 @@ class Product extends Model
     public function presentPrice(){
       return money_format('$%i ', $this->price / 100);
     }
+
     public function scopeMightAlsoLike($query){
       return $query->inRandomOrder()->take(6);
     }
+
+    public function toSearchableArray()
+   {
+       $array = $this->toArray();
+       $extraFields = [
+           'categories' => $this->categories->pluck('name')->toArray(),
+       ];
+       return array_merge($array, $extraFields);
+   }
 }

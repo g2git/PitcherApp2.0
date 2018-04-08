@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-<!-- @section('title', 'Search Results') -->
+@section('title', 'Search Results')
 
 @section('content')
 
@@ -61,4 +61,12 @@
     </div>
     <!-- end search-results-container -->
 
+@endsection
+
+@section('scripts')
+    <script type="text/javascript" src="{{ asset('js/homepage/mightalsolike-product-slider.js') }}"></script>
+    <!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    <script src="{{ asset('js/algolia.js') }}"></script>
 @endsection
