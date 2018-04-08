@@ -41,7 +41,7 @@
             @foreach ($products as $key=>$product)
               <div class="carousel-item {{ ($key == 0) ? "active" : ""}} mx-2" >
                 <a class="d-block col-3 img-fluid" href="{{ route('shop.show', $product->slug) }}">
-                  <img style="width:100%;" src="{{ asset('img/defaults/placeholder_default_350x180.png')}}"></a>
+                  <img style="width:100%;" src="{{ asset('storage/'.$product->image) }}"></a>
               </div>
               @endforeach
           </div>

@@ -35,8 +35,8 @@
     </div>
 
     <div class="container">
-        <div class="search-results-container-algolia">
-            <div>
+        <div class="row search-results-container-algolia">
+            <div class="col-mx-auto">
                 <h2>Search</h2>
                 <div id="search-box">
                     <!-- SearchBox widget will appear here -->
@@ -51,7 +51,7 @@
                 </div>
             </div>
 
-            <div>
+            <div class="col-md">
                 <div id="hits">
                     <!-- Hits widget will appear here -->
                 </div>
