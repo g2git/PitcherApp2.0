@@ -42,9 +42,12 @@ class RatingsController extends Controller
         //
         $userid = Auth::id();
 
-        //$numvotes = DB::table('ratings')->where('rateable_id', $post->id)->where('user_id', $userid)->count();
+        //Check if user already voted
+        $numvotes = Ratings::where('rateable_id', $request->productid)->where('user_id', $userid)->count();
         //dd($request->star);
 
+        if($numvotes == 0)
+        {
         //new Rating
         $post = new Ratings;
         //Creata a new post using the request data
@@ -59,6 +62,10 @@ class RatingsController extends Controller
         $product = Product::find($request->productid);
         $product->averagerating = $averagerating;
         $product->save();
+        }else{
+          $errormessage = __('messages.rated_article');
+          return redirect()->back()->with('data', $errormessage);
+        }
 
         //And redirect
         return redirect('/shop');

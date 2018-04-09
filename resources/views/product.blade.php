@@ -7,6 +7,14 @@
     <link href="{{ asset('css/bootstrap3-3-6.css') }}" rel="stylesheet">
 @endsection
 @section('content')
+
+<!-- Errormessage if user already voted -->
+<div class="container">
+  @if (session()->has('data'))
+<div class="alert alert-success">{{session('data')}}</div>
+@endif
+</div>
+
 <div class="container">
     <p><h2 style="text-align:left;">{{ $product->name }}</h2></p>
     <div class="row">

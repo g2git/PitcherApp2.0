@@ -64,5 +64,9 @@ return  [
   'reorder' =>'Re-Order',
   //wishlist page
   'addcart' =>'Add to cart',
+  //ShopController
+  'submit_rating' => 'Submit Rating',
+  //Productpage
+  'rated_article' => 'You have already rated this article',
 ];
  ?>
