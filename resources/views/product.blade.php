@@ -23,30 +23,58 @@
         <img src="{{ asset('storage/'.$product->image) }}" alt="img" class="img-thumbnail">
       </div>
         <div class="mx-auto">
+        @guest
+        <div class="stars">
 
-          <div class="stars">
+            <form action="/vote" method="post">
+              {{ csrf_field() }}
 
-          	  <form action="/vote" method="post">
-                {{ csrf_field() }}
+              <input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
+              <label class="star star-5" for="star-5"></label>
+              <input class="star star-4" id="star-4" type="radio" name="star" value="4"/>
+              <label class="star star-4" for="star-4"></label>
+              <input class="star star-3" id="star-3" type="radio" name="star" value="3"/>
+              <label class="star star-3" for="star-3"></label>
+              <input class="star star-2" id="star-2" type="radio" name="star" value="2"/>
+              <label class="star star-2" for="star-2"></label>
+              <input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
+              <label class="star star-1" for="star-1"></label>
 
-          	    <input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
-          	    <label class="star star-5" for="star-5"></label>
-          	    <input class="star star-4" id="star-4" type="radio" name="star" value="4"/>
-          	    <label class="star star-4" for="star-4"></label>
-          	    <input class="star star-3" id="star-3" type="radio" name="star" value="3"/>
-          	    <label class="star star-3" for="star-3"></label>
-          	    <input class="star star-2" id="star-2" type="radio" name="star" value="2"/>
-          	    <label class="star star-2" for="star-2"></label>
-          	    <input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
-          	    <label class="star star-1" for="star-1"></label>
+              <input type="hidden" name="productid" required="" value="{{ $product->id }}">
 
-                <input type="hidden" name="productid" required="" value="{{ $product->id }}">
+              <p>Average rating: {{ $product->averagerating }}/5</p>
+            
+            </form>
 
-                <p>Average rating: {{ $product->averagerating }}/5</p>
-                <button class="btn btn-success">@lang('messages.submit_rating')</button>
-          	  </form>
+        </div>
 
-          </div>
+        @else
+        <div class="stars">
+
+            <form action="/vote" method="post">
+              {{ csrf_field() }}
+
+              <input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
+              <label class="star star-5" for="star-5"></label>
+              <input class="star star-4" id="star-4" type="radio" name="star" value="4"/>
+              <label class="star star-4" for="star-4"></label>
+              <input class="star star-3" id="star-3" type="radio" name="star" value="3"/>
+              <label class="star star-3" for="star-3"></label>
+              <input class="star star-2" id="star-2" type="radio" name="star" value="2"/>
+              <label class="star star-2" for="star-2"></label>
+              <input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
+              <label class="star star-1" for="star-1"></label>
+
+              <input type="hidden" name="productid" required="" value="{{ $product->id }}">
+
+              <p>Average rating: {{ $product->averagerating }}/5</p>
+              <button class="btn btn-success">@lang('messages.submit_rating')</button>
+            </form>
+
+        </div>
+
+        @endguest
+
 
              </div>
         </div>
