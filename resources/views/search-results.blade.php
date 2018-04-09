@@ -2,6 +2,10 @@
 
 @section('title', 'Search Results')
 
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/algolia.css') }}">
+  @endsection
+
 @section('content')
 
     @component('components.breadcrumbs')
@@ -37,6 +41,7 @@
             <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Averagerating</th>
                     <th>Details</th>
                     <th>Description</th>
                     <th>Price</th>
@@ -46,6 +51,7 @@
                 @foreach ($products as $product)
                     <tr>
                         <th><a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</a></th>
+                        <td>{{ $product->averagerating }}</td>
                         <td>{{ $product->details }}</td>
                         <td>{{ str_limit($product->description, 80) }}</td>
                         <td>{{ $product->presentPrice() }}</td>
