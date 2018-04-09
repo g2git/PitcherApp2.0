@@ -30,7 +30,13 @@
                     <tbody>
     @foreach(Cart::content() as $item)
     <tr>
-        <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
+        <td><a href="{{ route('shop.show', $item->model->slug) }}">
+          @if($item->model->image)
+          <img width="100px" src="{{ asset('storage/'.$item->model->image) }}" alt="img" class="img-thumbnail">
+          @else
+          <img width="100px" src="{{ asset('img/defaults/placeholder_default_350x180.png')}}" alt="img" class="img-thumbnail">
+          @endif
+        </a></td>
         <td><a href="{{ route('shop.show', $item->model->slug) }}">{{ $item->name }}</a></td>
         <td>In stock</td>
         <td>
@@ -103,7 +109,7 @@
                 <a href="{{ route('shop.index') }}" class="btn btn-block btn-light">Continue Shopping</a>
             </div>
             <div class="col-sm-12 col-md-6 text-right">
-                <button class="btn btn-lg btn-block btn-success text-uppercase">Next Step (Billing)</button>
+                <a href="{{ route('checkout.index') }}" class="btn btn-block btn-success text-uppercase">Next Step (Billing)</a>
             </div>
         </div>
     </div>
@@ -128,7 +134,15 @@
   <tbody>
     @foreach (Cart::instance('saveForLater')->content() as $item)
     <tr>
-        <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
+        <td>
+          <a href="{{ route('shop.show', $item->model->slug) }}">
+            @if($item->model->image)
+            <img width="100px" src="{{ asset('storage/'.$item->model->image) }}" alt="img" class="img-thumbnail">
+            @else
+            <img width="100px" src="{{ asset('img/defaults/placeholder_default_350x180.png')}}" alt="img" class="img-thumbnail">
+            @endif
+          </a>
+        </td>
         <td><a href="{{ route('shop.show', $item->model->slug) }}">{{ $item->name }}</a></td>
         <td>In stock</td>
         <td class="text-right">{{ $item->model->presentPrice() }}</td>
@@ -164,16 +178,20 @@
 </div><!-- end of div container -->
 <br><br><br><br><br><br>
   <!-- Below is "related" products -->
-  <div class="container-fluid">
+  <div class="container">
   <p> <h3 style="text-align:center;">You also might like</h3> </p>
     <div class="row mx-auto my-auto">
       <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
         <div class="carousel-inner w-100" role="listbox">
           @foreach ($mightAlsoLike as $key=>$product)
              <div class="carousel-item {{ ($key == 0) ? "active" : "" }}">
-             <a class="d-block col-3" href="{{ route('shop.show', $product->slug) }}">
-             <img style="width:100%;"  src="http://placehold.it/350x180?text=1">
-           </a>
+               <a href="{{ route('shop.show', $product->slug) }}">
+                 @if($product->image)
+                 <img src="{{ asset('storage/'.$product->image) }}" alt="img" class="img-thumbnail">
+                 @else
+                 <img src="{{ asset('img/defaults/placeholder_default_350x180.png')}}" alt="img" class="img-thumbnail">
+                 @endif
+               </a>
            </div>
           @endforeach
         </div>

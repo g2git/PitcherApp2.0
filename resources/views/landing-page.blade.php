@@ -2,15 +2,11 @@
 
 @section('styles')
     <link href="{{ asset('css/productpage/related-product-slider.css') }}" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/algolia.css') }}">
 @endsection
 
 @section('content')
 
-@component('components.breadcrumbs')
-    <a href="/">Home</a>
-    <i class="fa fa-chevron-right breadcrumb-separator"></i>
-@endcomponent
+
 
 <div class="container">
     @if (session()->has('success_message'))
@@ -72,7 +68,7 @@
           <h4 class="card-title">
             {{ $category->name }}
           </h4>
-          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+          <img width="250px" height="250px" class="card-img-top" src="{{ $category->image }}" alt="">
         </div>
         </a>
       </div>
@@ -87,7 +83,5 @@
 @section('scripts')
     <script type="text/javascript" src="{{ asset('js/homepage/mightalsolike-product-slider.js') }}"></script>
     <!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
-    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-    <script src="{{ asset('js/algolia.js') }}"></script>
+
 @endsection

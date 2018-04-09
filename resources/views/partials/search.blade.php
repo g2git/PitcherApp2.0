@@ -6,12 +6,12 @@
     </svg>
 </div>
 
-<div class="row">
-  <div class="col-lg-6">
+<!--<div class="row">
+  <div class="col-md-6">
     <form action="{{ route('search') }}" method="GET" class="navbar-form navbar-right">
       <div class="input-group">
         <input type="text" name="query" id="query" value="{{ request()->input('query') }}" class="col form-control" placeholder="Search for product" required>
       </div>
     </form>
   </div>
-</div>
+</div>-->

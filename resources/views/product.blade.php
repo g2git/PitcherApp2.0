@@ -142,8 +142,14 @@
       <div class="carousel-inner w-100" role="listbox">
         @foreach ($mightAlsoLike as $key=>$product)
         <div class="carousel-item {{ ($key == 0) ? "active" : "" }}">
-          <a class="d-block col-3" href="{{ route('shop.show', $product->slug) }}">
-            <img style="width:100%;"  src="http://placehold.it/350x180?text=1">
+
+
+          <a href="{{ route('shop.show', $product->slug) }}">
+            @if($product->image)
+            <img src="{{ asset('storage/'.$product->image) }}" alt="img" class="img-thumbnail">
+            @else
+            <img src="{{ asset('img/defaults/placeholder_default_350x180.png')}}" alt="img" class="img-thumbnail">
+            @endif
           </a>
         </div>
         @endforeach

@@ -1,8 +1,8 @@
     <div class="container row">
-        <div class="col">
+        <div class="col-md">
             {{ $slot }}
         </div>
-        <div class="col">
+        <div class="col-md">
             @include('partials.search')
         </div>
     </div>

@@ -47,7 +47,9 @@
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/header.js') }}"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+<script src="{{ asset('js/algolia.js') }}"></script>
 @yield('scripts')
 </body>
 </html>
