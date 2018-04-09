@@ -30,7 +30,7 @@
 
   <!-- New product slider -->
   <br>
-    <p> <h3 style="text-align:center;">New products</h3> </p>
+    <p> <h3 style="text-align:center;">@lang('messages.newproducts')</h3> </p>
   <div class="row mx-auto my-auto">
       <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
           <div class="carousel-inner w-100" role="listbox">
@@ -43,11 +43,11 @@
           </div>
           <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
+              <span class="sr-only">@lang('messages.previous')</span>
           </a>
           <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
+              <span class="sr-only">@lang('messages.next')</span>
           </a>
       </div>
     </div>
@@ -57,7 +57,7 @@
 
     <!-- Page Heading -->
     <h1 class="mt-5">
-      Categories
+      @lang('messages.categories')
     </h1>
 
     <div class="row">

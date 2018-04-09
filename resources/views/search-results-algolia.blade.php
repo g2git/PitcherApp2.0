@@ -33,7 +33,7 @@
     <div class="container">
         <div class="row search-results-container-algolia">
             <div class="col-mx-auto">
-                <h2>Search</h2>
+                <h2>@lang('messages.search')</h2>
                 <div id="search-box">
                     <!-- SearchBox widget will appear here -->
                 </div>
@@ -41,7 +41,7 @@
                 <div id="stats-container"></div>
 
                 <div class="spacer"></div>
-                <h2>Categories</h2>
+                <h2>@lang('messages.categories')</h2>
                 <div id="refinement-list">
                     <!-- RefinementList widget will appear here -->
                 </div>

@@ -35,14 +35,14 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <legend class="text-center">Shipping Address</legend>
+      <legend class="text-center">@lang('messages.shipping_address')</legend>
       <hr>
       <div class="row">
         <form action="{{ route('checkout.store') }}" method="POST" id="payment-form">
           {{ csrf_field() }}
 
           <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-            <label for="email">Email</label>
+            <label for="email">@lang('messages.email')</label>
             <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
             @if($errors->has('email'))
             <span class="help-block">{{ $errors->first('email') }}</span>
@@ -50,7 +50,7 @@
           </div>
 
           <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-            <label for="name">Name</label>
+            <label for="name">@lang('messages.name')</label>
             <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
             @if($errors->has('name'))
             <span class="help-block">{{ $errors->first('name') }}</span>
@@ -58,7 +58,7 @@
           </div>
 
           <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-            <label for="address">Address</label>
+            <label for="address">@lang('messages.address')</label>
             <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}" required>
             @if($errors->has('name'))
             <span class="help-block">{{ $errors->first('address') }}</span>
@@ -67,7 +67,7 @@
 
           <div class="half-form">
             <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
-              <label for="city">City</label>
+              <label for="city">@lang('messages.city')</label>
               <input type="text" class="form-control" id="city" name="city" value="{{ old('city') }}" required>
               @if($errors->has('name'))
               <span class="help-block">{{ $errors->first('city') }}</span>
@@ -75,7 +75,7 @@
             </div>
 
             <div class="form-group{{ $errors->has('province') ? ' has-error' : '' }}">
-              <label for="province">Province</label>
+              <label for="province">@lang('messages.province')</label>
               <input type="text" class="form-control" id="province" name="province" value="{{ old('province') }}" required>
               @if($errors->has('name'))
               <span class="help-block">{{ $errors->first('province') }}</span>
@@ -85,14 +85,14 @@
 
           <div class="half-form">
             <div class="form-group{{ $errors->has('postalcode') ? ' has-error' : '' }}">
-              <label for="postalcode">Postal Code</label>
+              <label for="postalcode">@lang('messages.postalcode')</label>
               <input type="text" class="form-control" id="postalcode" name="postalcode" value="{{ old('postalcode') }}" required>
               @if($errors->has('name'))
               <span class="help-block">{{ $errors->first('postalcode') }}</span>
               @endif
             </div>
             <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-              <label for="phone">Phone</label>
+              <label for="phone">@lang('messages.phone')</label>
               <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}" required>
               @if($errors->has('name'))
               <span class="help-block">{{ $errors->first('phone') }}</span>
@@ -100,7 +100,7 @@
             </div>
           </div> <!-- end half-form -->
           <div class="form-group{{ $errors->has('name_on_card') ? ' has-error' : '' }}">
-            <label for="name_on_card">Name on Card</label>
+            <label for="name_on_card">@lang('messages.cardholder')</label>
             <input type="text" class="form-control" id="name_on_card" name="name_on_card" value="">
             @if($errors->has('name'))
             <span class="help-block">{{ $errors->first('name_on_card') }}</span>
@@ -109,7 +109,7 @@
 
           <div class="form-group">
             <label for="card-element">
-              Credit or debit card
+              @lang('messages.creditordebit')
             </label>
             <div id="card-element">
               <!-- A Stripe Element will be inserted here. -->
@@ -125,7 +125,7 @@
     </div>
     <div class="col-md-6 ">
 
-      <legend  class="text-center">Review Order</legend>
+      <legend  class="text-center">@lang('messages.review_order')</legend>
       <hr>
       @foreach(Cart::content() as $item)
       <div class="row" style="margin-bottom: 15px;">
@@ -144,7 +144,7 @@
             <strong>{{ $item->model->name }}</strong>
           </div>
           <div class="row">
-            <p>Quantity: {{ $item->qty }}</p>
+            <p>@lang('messages.quantity') {{ $item->qty }}</p>
           </div>
         </div>
         <div class="col-md-4">
@@ -158,13 +158,13 @@
       <div class="row justify-content-end">
         <div class="col-md-6 col-offset-md-6">
           <div class="row justify-content-end" style="border-bottom: gray solid 1px;">
-            <h6><strong>SubTotal: <small>{{ presentPrice(Cart::subtotal()) }}</small></strong> </h6>
+            <h6><strong>@lang('messages.subtotal') <small>{{ presentPrice(Cart::subtotal()) }}</small></strong> </h6>
           </div>
           <div class="row justify-content-end" style="border-bottom: gray solid 1px;">
-            <h6><strong>Tax (21%): <small>{{ presentPrice(Cart::tax()) }}</small></strong> </h6>
+            <h6><strong>@lang('messages.tax21') <small>{{ presentPrice(Cart::tax()) }}</small></strong> </h6>
           </div>
           <div class="row justify-content-end" style="border-bottom: gray solid 1px;">
-            <h6><strong>Total: <small>{{ presentPrice(Cart::total()) }}</small></strong> </h6>
+            <h6><strong>@lang('messages.total'): <small>{{ presentPrice(Cart::total()) }}</small></strong> </h6>
           </div>
         </div>
       </div>

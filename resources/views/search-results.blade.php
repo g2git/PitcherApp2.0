@@ -27,18 +27,18 @@
     </div>
 
     <div class="search-results-container container">
-        <h1>Search Results</h1>
-        <p class="search-results-count">{{ $products->total() }} result(s) for '{{ request()->input('query') }}'</p>
+        <h1>@lang('messages.searchresults')</h1>
+        <p class="search-results-count">{{ $products->total() }} @lang('messages.resultsfor') '{{ request()->input('query') }}'</p>
 
         @if ($products->total() > 0)
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Averagerating</th>
-                    <th>Details</th>
-                    <th>Description</th>
-                    <th>Price</th>
+                    <th>@lang('messages.name')</th>
+                    <th>@lang('messages.averagerating')</th>
+                    <th>@lang('messages.details')</th>
+                    <th>@lang('messages.description')</th>
+                    <th>@lang('messages.price')</th>
                 </tr>
             </thead>
             <tbody>

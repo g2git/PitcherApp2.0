@@ -5,40 +5,40 @@
       <div class="col-md">
         <div class="row text-center">
           <ul class="list-group w-100 p-3">
-            <li class="item list-group-item "><strong>About</strong></li>
-            <li class="item list-group-item ">About us</li>
+            <li class="item list-group-item "><strong>@lang('messages.about')</strong></li>
+            <li class="item list-group-item ">@lang('messages.aboutus')</li>
           </ul>
         </div>
       </div>
       <div class="col-md">
         <div class="row text-center">
           <ul class="list-group w-100 p-3">
-            <li class="item list-group-item "><strong>Support</strong></li>
-            <li class="item list-group-item ">Contact</li>
-            <li class="item list-group-item ">Returns</li>
+            <li class="item list-group-item "><strong>@lang('messages.support')</strong></li>
+            <li class="item list-group-item ">@lang('messages.contact')</li>
+            <li class="item list-group-item ">@lang('messages.returns')</li>
           </ul>
         </div>
       </div>
       <div class="col-md">
         <div class="row text-center">
           <ul class="list-group w-100 p-3">
-            <li class="item list-group-item "><strong>Legal</strong></li>
-            <li class="item list-group-item ">Privacy</li>
-            <li class="item list-group-item ">Terms</li>
+            <li class="item list-group-item "><strong>@lang('messages.legal')</strong></li>
+            <li class="item list-group-item ">@lang('messages.privacy')</li>
+            <li class="item list-group-item ">@lang('messages.terms')</li>
           </ul>
         </div>
       </div>
       <div class="col-md">
         <div class="row text-center">
           <ul class="list-group w-100 p-3">
-            <li class="item list-group-item "><strong>Other</strong></li>
-            <li class="item list-group-item ">Account</li>
+            <li class="item list-group-item "><strong>@lang('messages.other')</strong></li>
+            <li class="item list-group-item ">@lang('messages.account')</li>
           </ul>
         </div>
       </div>
     </div>
     <div class="row justify-content-center">
-      <span class="legal">© 2018 pitcher App All Rights Reserved</span>
+      <span class="legal">@lang('messages.rightsreserved')</span>
     </div>
   </div>
 </footer>
