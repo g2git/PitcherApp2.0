@@ -44,3 +44,7 @@ Route::get('/search-algolia', 'ShopController@searchAlgolia')->name('search-algo
 Route::post('/vote', 'RatingsController@store');
 
 Route::resource('/contact', 'ContactController');
+
+Route::get('/leaderboard', function () {
+    return view('/leaderboard');
+});
