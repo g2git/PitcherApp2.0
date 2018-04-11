@@ -14,7 +14,7 @@
         <div class="row text-center">
           <ul class="list-group w-100 p-3">
             <li class="item list-group-item "><strong>@lang('messages.support')</strong></li>
-            <li class="item list-group-item ">@lang('messages.contact')</li>
+            <li class="item list-group-item "><a href='{!! url('/contact'); !!}'>@lang('messages.contact')</a></li>
             <li class="item list-group-item ">@lang('messages.returns')</li>
           </ul>
         </div>

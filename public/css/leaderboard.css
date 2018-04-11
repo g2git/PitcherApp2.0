@@ -16,13 +16,13 @@
   /* top: 100%; */
   /* left: 50%; */
   right: 0;
-  width: 2000px;
+  width: 7000px;
   margin-left: -200px;
   font: 300 30px/1 'Open Sans Condensed', sans-serif;
   text-align: center;
   text-transform: uppercase;
   color: #fff;
-  animation: 20s credits linear infinite;
+  animation: 35s credits linear infinite;
 }
 
 .movie {
@@ -62,7 +62,7 @@
     left: 100%;
   }
   100% {
-    left: -100%;
+    left: -350%;
   }
 
 }
@@ -76,7 +76,14 @@
     background-repeat:   no-repeat;
     background-size:     cover;
      */
+
 }
+
+.img-thumbnail:hover {
+   transform: scale(1.5);
+   position: relative;
+   z-index: 1;
+  }
 
 #slider2{
   animation-direction:reverse;

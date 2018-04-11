@@ -20,7 +20,7 @@
   <div class="row">
     <div class="gallery col-md-6">
       <div class="mx-auto">
-        <img src="{{ asset('storage/'.$product->image) }}" alt="img" class="img-thumbnail">
+        <img style="width:50%; height:250px" src="{{ asset('storage/'.$product->image) }}" alt="img" class="img-thumbnail">
       </div>
         <div class="mx-auto">
         @guest
@@ -172,7 +172,7 @@
         <div class="carousel-item {{ ($key == 0) ? "active" : "" }}">
 
 
-          <a href="{{ route('shop.show', $product->slug) }}">
+          <a class="d-block col-3 img-fluid" href="{{ route('shop.show', $product->slug) }}">
             @if($product->image)
             <img src="{{ asset('storage/'.$product->image) }}" alt="img" class="img-thumbnail">
             @else

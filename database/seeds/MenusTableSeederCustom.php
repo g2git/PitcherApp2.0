@@ -1,6 +1,8 @@
 <?php
+
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\Menu;
+
 class MenusTableSeederCustom extends Seeder
 {
     /**
@@ -13,6 +15,7 @@ class MenusTableSeederCustom extends Seeder
         Menu::firstOrCreate([
             'name' => 'main',
         ]);
+
         Menu::firstOrCreate([
             'name' => 'footer',
         ]);

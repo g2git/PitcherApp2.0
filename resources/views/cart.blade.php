@@ -99,7 +99,6 @@
 </table>
     @else
       <h4>@lang('messages.noitemsincart')</h4>
-      <h3><a class="btn btn-info" href="{{ route('shop.index') }}">@lang('messages.continueshopping')</a></h3>
     @endif
   </div><!-- end of div from table Shoppingcart -->
 </div><!-- end of div col-12 -->
@@ -188,7 +187,7 @@
         <div class="carousel-inner w-100" role="listbox">
           @foreach ($mightAlsoLike as $key=>$product)
              <div class="carousel-item {{ ($key == 0) ? "active" : "" }}">
-               <a href="{{ route('shop.show', $product->slug) }}">
+               <a class="d-block col-3 img-fluid" href="{{ route('shop.show', $product->slug) }}">
                  @if($product->image)
                  <img src="{{ asset('storage/'.$product->image) }}" alt="img" class="img-thumbnail">
                  @else
