@@ -174,9 +174,9 @@
 
           <a class="d-block col-3 img-fluid" href="{{ route('shop.show', $product->slug) }}">
             @if($product->image)
-            <img src="{{ asset('storage/'.$product->image) }}" alt="img" class="img-thumbnail">
+            <img style="width:100%; height:200px" src="{{ asset('storage/'.$product->image) }}" alt="img" class="img-thumbnail">
             @else
-            <img src="{{ asset('img/defaults/placeholder_default_350x180.png')}}" alt="img" class="img-thumbnail">
+            <img style="width:100%; height:200px" src="{{ asset('img/defaults/placeholder_default_350x180.png')}}" alt="img" class="img-thumbnail">
             @endif
           </a>
         </div>
