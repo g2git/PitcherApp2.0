@@ -94,7 +94,7 @@
   </div>
 
     @component('components.breadcrumbs')
-        <a href="/">Home</a>
+        <a href="{{ route('landing-page') }}">Home</a>
     @endcomponent
 
   <div class="row text-center">@include('layouts.alerts')</div>
